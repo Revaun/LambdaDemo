@@ -64,8 +64,8 @@ This project demonstrates the end-to-end process of configuring IAM credentials,
 **✅ CLI invoke command run**  
 ![lambda-invoke](Snapshots/lambda-invoke.png)
 
-**📄 Output file showing:**
-```json
+📄 Output file showing:
+
 {
   "statusCode": 200,
   "body": "Hello from Lambda!"
@@ -73,24 +73,21 @@ This project demonstrates the end-to-end process of configuring IAM credentials,
 
 ---
 
-🧾 5. Commands Used
-Identity & Credentials
+## 🧾 5. Commands Used
 
+### Identity & Credentials
 aws sts get-caller-identity --profile default
 
 ---
 
-IAM Role & Policy
-
-aws iam create-role --role-name lambda-basic-execution-r014 --assume-role-policy-document file://trust-policy.json
+### IAM Role & Policy
+aws iam create-role --role-name lambda-basic-execution-r014 --assume-role-policy-document file://trust-policy.json  
 aws iam attach-role-policy --role-name lambda-basic-execution-r014 --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
 
 ---
 
-
-Lambda Deployment
-
-Compress-Archive -Path lambda_function.py -DestinationPath function.zip -Force
+### Lambda Deployment
+Compress-Archive -Path lambda_function.py -DestinationPath function.zip -Force  
 
 aws lambda create-function `
   --function-name MySecurityDemoLambda `
@@ -103,9 +100,7 @@ aws lambda create-function `
 
 ---
 
-
-Lambda Execution
-
+### Lambda Execution
 aws lambda invoke `
   --function-name MySecurityDemoLambda `
   --payload '{}' `
@@ -115,16 +110,11 @@ aws lambda invoke `
 
 ---
 
-✅ Outcome
-
+## ✅ Outcome
 This demo proves:
-
-    Secure IAM role setup with trusted entity.
-
-    Correct packaging of Python handler into a ZIP.
-
-    Successful Lambda deployment via AWS CLI.
-
-    Verified execution with output captured in response.json.
+- Secure IAM role setup with trusted entity.  
+- Correct packaging of Python handler into a ZIP.  
+- Successful Lambda deployment via AWS CLI.  
+- Verified execution with output captured in response.json.  
 
 Snapshots demonstrate troubleshooting, correction, and final success. The sequence highlights hands-on AWS CLI usage, IAM security awareness, and Lambda deployment skills — all critical for Cloud Security Engineer roles.
