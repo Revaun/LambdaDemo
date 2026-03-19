@@ -5,6 +5,7 @@
 ## 📌 Project Overview
 This project demonstrates the end-to-end process of configuring IAM credentials, creating a secure Lambda function, and invoking it successfully. Each step is documented with CLI commands and proof snapshots to highlight troubleshooting, correction, and final success.
 
+
 ---
 
 ## 🔐 1. Identity & Credentials
@@ -85,6 +86,7 @@ aws iam create-role --role-name lambda-basic-execution-r014 --assume-role-policy
 aws iam attach-role-policy --role-name lambda-basic-execution-r014 --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
 
 ---
+
 
 Lambda Deployment
 
